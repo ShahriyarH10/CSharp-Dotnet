@@ -59,8 +59,25 @@ namespace WindowsFormsApp1
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(message, "Information", MessageBoxButtons.YesNoCancel);
+            var result = MessageBox.Show(message, "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes || result == DialogResult.No)
+            {
+                btnSubmit.Visible = true;
+                btnShow.Visible = false;
+            }
+        }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            if (this.Owner != null)
+                this.Owner.Hide();
+        }
+
+        private void RegistrationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Owner != null)
+                this.Owner.Show();
         }
     }
 }
