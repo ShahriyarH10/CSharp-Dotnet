@@ -44,23 +44,23 @@ namespace HomeServiceManagementSystem
 
     class Client : Person
     {
+        public string client_id { get; set; }
         public string Location { get; set; }
         public string ServiceHolding { get; set; }
-        public string Id { get; set; }
 
         public Client() { }
 
-        public Client(string name, int age, string number, GenderType gender, string username, string password, string id, string location, string serviceHolding)
+        public Client(string name, int age, string number, GenderType gender, string username, string password, string client_id, string location, string serviceHolding)
             : base(name, age, number, gender, username, password)
         {
-            Id = id;
+            this.client_id = client_id;
             Location = location;
             ServiceHolding = serviceHolding;
         }
 
         public void ShowDetails()
         {
-            Console.WriteLine($"Name: {Name}, ID: {Id}, Age: {Age}, Number: {Number}, Gender: {Gender}, Location: {Location}, Service: {ServiceHolding}");
+            Console.WriteLine($"Name: {Name}, Client ID: {client_id}, Age: {Age}, Number: {Number}, Gender: {Gender}, Location: {Location}, Service: {ServiceHolding}");
         }
     }
 
@@ -88,12 +88,12 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Remove(string id, out Client removedClient)
+        public bool Remove(string client_id, out Client removedClient)
         {
             removedClient = null;
             for (int i = 0; i < clients.Length; i++)
             {
-                if (clients[i] != null && clients[i].Id == id)
+                if (clients[i] != null && clients[i].client_id == client_id)
                 {
                     removedClient = clients[i];
                     clients[i] = null;
@@ -105,11 +105,11 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Update(string id, params string[] updates)
+        public bool Update(string client_id, params string[] updates)
         {
             foreach (var client in clients)
             {
-                if (client != null && client.Id == id)
+                if (client != null && client.client_id == client_id)
                 {
                     if (updates.Length >= 4)
                     {
@@ -161,17 +161,17 @@ namespace HomeServiceManagementSystem
 
     class Worker : Person
     {
-        public string Id { get; set; }
+        public string worker_id { get; set; }
         public float Salary { get; set; }
         public string ServiceType { get; set; }
         public string Location { get; set; }
 
         public Worker() { }
 
-        public Worker(string name, int age, string number, GenderType gender, string username, string password, string id, float salary, string serviceType, string location)
+        public Worker(string name, int age, string number, GenderType gender, string username, string password, string worker_id, float salary, string serviceType, string location)
             : base(name, age, number, gender, username, password)
         {
-            Id = id;
+            this.worker_id = worker_id;
             Salary = salary;
             ServiceType = serviceType;
             Location = location;
@@ -179,7 +179,7 @@ namespace HomeServiceManagementSystem
 
         public void ShowDetails()
         {
-            Console.WriteLine($"Name: {Name}, ID: {Id}, Age: {Age}, Number: {Number}, Gender: {Gender}, Salary: {Salary}, Service Type: {ServiceType}, Location: {Location}");
+            Console.WriteLine($"Name: {Name}, Worker ID: {worker_id}, Age: {Age}, Number: {Number}, Gender: {Gender}, Salary: {Salary}, Service Type: {ServiceType}, Location: {Location}");
         }
     }
 
@@ -219,12 +219,12 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Remove(string id, out Worker removedWorker)
+        public bool Remove(string worker_id, out Worker removedWorker)
         {
             removedWorker = null;
             for (int i = 0; i < workers.Length; i++)
             {
-                if (workers[i] != null && workers[i].Id == id)
+                if (workers[i] != null && workers[i].worker_id == worker_id)
                 {
                     removedWorker = workers[i];
                     workers[i] = null;
@@ -236,11 +236,11 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Update(string id, params string[] updates)
+        public bool Update(string worker_id, params string[] updates)
         {
             foreach (var worker in workers)
             {
-                if (worker != null && worker.Id == id)
+                if (worker != null && worker.worker_id == worker_id)
                 {
                     if (updates.Length >= 4)
                     {
@@ -284,17 +284,17 @@ namespace HomeServiceManagementSystem
 
     class Admin : Person
     {
-        public string Id { get; set; }
+        public string admin_id { get; set; }
 
-        public Admin(string name, int age, string number, GenderType gender, string username, string password, string id)
+        public Admin(string name, int age, string number, GenderType gender, string username, string password, string admin_id)
             : base(name, age, number, gender, username, password)
         {
-            Id = id;
+            this.admin_id = admin_id;
         }
 
         public void ShowDetails()
         {
-            Console.WriteLine($"Admin Name: {Name}, ID: {Id}, Username: {UserName}");
+            Console.WriteLine($"Admin Name: {Name}, Admin ID: {admin_id}, Username: {UserName}");
         }
     }
 
@@ -324,12 +324,12 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Remove(string id, out Admin removedAdmin)
+        public bool Remove(string admin_id, out Admin removedAdmin)
         {
             removedAdmin = null;
             for (int i = 0; i < admins.Length; i++)
             {
-                if (admins[i] != null && admins[i].Id == id)
+                if (admins[i] != null && admins[i].admin_id == admin_id)
                 {
                     removedAdmin = admins[i];
                     admins[i] = null;
@@ -341,18 +341,18 @@ namespace HomeServiceManagementSystem
             return false;
         }
 
-        public bool Update(string id, params string[] updates)
+        public bool Update(string admin_id, params string[] updates)
         {
             for (int i = 0; i < admins.Length; i++)
             {
-                if (admins[i] != null && admins[i].Id == id)
+                if (admins[i] != null && admins[i].admin_id == admin_id)
                 {
                     if (updates.Length >= 6)
                     {
                         admins[i].Name = updates[0];
                         admins[i].Age = int.Parse(updates[1]);
                         admins[i].Number = updates[2];
-                        admins[i].Gender = (GenderType)Enum.Parse(typeof(GenderType), updates[3]);
+                        admins[i].Gender = (GenderType)Enum.Parse(typeof(GenderType), updates[3], true);
                         admins[i].UserName = updates[4];
                         admins[i].Password = updates[5];
                         Console.WriteLine("Admin updated.");
@@ -402,20 +402,20 @@ namespace HomeServiceManagementSystem
 
     class Services
     {
+        public string service_id { get; set; }
         public string AvailAbleServices { get; set; }
         public double Price { get; set; }
-        public string ServiceID { get; set; }
 
-        public Services(string name, double price, string id)
+        public Services(string name, double price, string service_id)
         {
             AvailAbleServices = name;
             Price = price;
-            ServiceID = id;
+            this.service_id = service_id;
         }
 
         public void ShowService()
         {
-            Console.WriteLine($"Service ID: {ServiceID}, Name: {AvailAbleServices}, Price: {Price}");
+            Console.WriteLine($"Service ID: {service_id}, Name: {AvailAbleServices}, Price: {Price}");
         }
     }
 
@@ -430,16 +430,16 @@ namespace HomeServiceManagementSystem
 
             // Initialize with sample data using params
             adminList.Insert(
-                new Admin("Alice", 35, "0123456789", GenderType.Female, "admin1", "pass1", "A001")
+                new Admin("Alice", 35, "0123456789", GenderType.Female, "admin1", "pass1", "admin_id_1")
             );
 
             clientList.Insert(
-                new Client("Bob", 28, "0198765432", GenderType.Male, "bobc", "1234", "C001", "Dhaka", "Plumbing")
+                new Client("Bob", 28, "0198765432", GenderType.Male, "bobc", "1234", "client_id_1", "Dhaka", "Plumbing")
             );
 
             workerList.Insert(
-                new Worker("John", 30, "01711223344", GenderType.Male, "johnw", "abcd", "W001", 1000, "Plumbing", "Dhaka"),
-                new Worker("Sarah", 32, "01755667788", GenderType.Female, "sarahw", "efgh", "W002", 1200, "Electrical", "Chittagong")
+                new Worker("John", 30, "01711223344", GenderType.Male, "johnw", "abcd", "worker_id_1", 1000, "Plumbing", "Dhaka"),
+                new Worker("Sarah", 32, "01755667788", GenderType.Female, "sarahw", "efgh", "worker_id_2", 1200, "Electrical", "Chittagong")
             );
 
             Console.WriteLine("===== Home Service Management System =====");
@@ -488,7 +488,7 @@ namespace HomeServiceManagementSystem
 
                                         if (cOpt == "1")
                                         {
-                                            Console.Write("ID: ");
+                                            Console.Write("Client ID: ");
                                             string id = Console.ReadLine();
                                             Console.Write("Name: ");
                                             string name = Console.ReadLine();
@@ -497,7 +497,7 @@ namespace HomeServiceManagementSystem
                                             Console.Write("Number: ");
                                             string num = Console.ReadLine();
                                             Console.Write("Gender (Male/Female/Other): ");
-                                            GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine());
+                                            GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine(), true);
                                             Console.Write("Username: ");
                                             string uname = Console.ReadLine();
                                             Console.Write("Password: ");
@@ -553,7 +553,7 @@ namespace HomeServiceManagementSystem
 
                                         if (wOpt == "1")
                                         {
-                                            Console.Write("ID: ");
+                                            Console.Write("Worker ID: ");
                                             string id = Console.ReadLine();
                                             Console.Write("Name: ");
                                             string name = Console.ReadLine();
@@ -562,7 +562,7 @@ namespace HomeServiceManagementSystem
                                             Console.Write("Number: ");
                                             string num = Console.ReadLine();
                                             Console.Write("Gender (Male/Female/Other): ");
-                                            GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine());
+                                            GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine(), true);
                                             Console.Write("Username: ");
                                             string uname = Console.ReadLine();
                                             Console.Write("Password: ");
@@ -639,7 +639,7 @@ namespace HomeServiceManagementSystem
                                         {
                                             Console.Write("Enter Service ID to remove: ");
                                             string removeId = Console.ReadLine();
-                                            var serviceToRemove = services.FirstOrDefault(s => s.ServiceID == removeId);
+                                            var serviceToRemove = services.FirstOrDefault(s => s.service_id == removeId);
                                             if (serviceToRemove != null)
                                             {
                                                 services.Remove(serviceToRemove);
@@ -679,7 +679,7 @@ namespace HomeServiceManagementSystem
                                                         w.ServiceType.Equals(c.ServiceHolding, StringComparison.OrdinalIgnoreCase) &&
                                                         w.Location.Equals(c.Location, StringComparison.OrdinalIgnoreCase))
                                                     {
-                                                        Console.WriteLine($"Match Found: Client ID: {c.Id}, Worker ID: {w.Id}");
+                                                        Console.WriteLine($"Match Found: Client ID: {c.client_id}, Worker ID: {w.worker_id}");
                                                         matchFound = true;
                                                     }
                                                 }
@@ -706,19 +706,19 @@ namespace HomeServiceManagementSystem
                                             switch (adminManageChoice)
                                             {
                                                 case "1":
-                                                    Console.Write("Enter ID: ");
+                                                    Console.Write("Admin ID: ");
                                                     string id = Console.ReadLine();
-                                                    Console.Write("Enter Name: ");
+                                                    Console.Write("Name: ");
                                                     string name = Console.ReadLine();
-                                                    Console.Write("Enter Age: ");
+                                                    Console.Write("Age: ");
                                                     int age = int.Parse(Console.ReadLine());
-                                                    Console.Write("Enter Number: ");
+                                                    Console.Write("Number: ");
                                                     string number = Console.ReadLine();
-                                                    Console.Write("Enter Gender (Male/Female/Other): ");
-                                                    GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine());
-                                                    Console.Write("Enter Username: ");
+                                                    Console.Write("Gender (Male/Female/Other): ");
+                                                    GenderType gender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine(), true);
+                                                    Console.Write("Username: ");
                                                     string uname = Console.ReadLine();
-                                                    Console.Write("Enter Password: ");
+                                                    Console.Write("Password: ");
                                                     string pass = Console.ReadLine();
 
                                                     Admin newAdmin = new Admin(name, age, number, gender, uname, pass, id);
@@ -729,7 +729,7 @@ namespace HomeServiceManagementSystem
                                                     break;
 
                                                 case "2":
-                                                    Console.Write("Enter ID to update: ");
+                                                    Console.Write("Enter admin ID to update: ");
                                                     string updateId = Console.ReadLine();
                                                     Console.Write("Enter new name: ");
                                                     string newName1 = Console.ReadLine();
@@ -751,7 +751,7 @@ namespace HomeServiceManagementSystem
                                                     break;
 
                                                 case "3":
-                                                    Console.Write("Enter ID to remove: ");
+                                                    Console.Write("Enter admin ID to remove: ");
                                                     if (!adminList.Remove(Console.ReadLine(), out Admin removedAdmin))
                                                     {
                                                         Console.WriteLine("Failed to remove admin.");
@@ -847,7 +847,7 @@ namespace HomeServiceManagementSystem
 
                     case "3": // Client Sign-Up
                         Console.WriteLine("\n--- Client Sign-Up ---");
-                        Console.Write("ID: ");
+                        Console.Write("Client ID: ");
                         string newId = Console.ReadLine();
                         Console.Write("Name: ");
                         string newName = Console.ReadLine();
@@ -856,7 +856,7 @@ namespace HomeServiceManagementSystem
                         Console.Write("Number: ");
                         string newNumber = Console.ReadLine();
                         Console.Write("Gender (Male/Female/Other): ");
-                        GenderType newGender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine());
+                        GenderType newGender = (GenderType)Enum.Parse(typeof(GenderType), Console.ReadLine(), true);
                         Console.Write("Username: ");
                         string newUsername = Console.ReadLine();
                         Console.Write("Password: ");
