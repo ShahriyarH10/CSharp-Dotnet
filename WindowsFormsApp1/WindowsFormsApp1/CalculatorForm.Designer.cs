@@ -227,6 +227,7 @@
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(274, 38);
             this.txtResult.TabIndex = 17;
+           
             // 
             // CalculatorForm
             // 
