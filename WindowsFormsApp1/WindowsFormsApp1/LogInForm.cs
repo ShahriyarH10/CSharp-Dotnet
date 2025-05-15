@@ -34,5 +34,10 @@ namespace WindowsFormsApp1
             hf.Show();
             this.Hide();
         }
+
+        private void btnPasswordRelated_Click(object sender, EventArgs e)
+        {
+            this.txtPassword.PasswordChar = this.txtPassword.PasswordChar == '\0' ? '*' : '\0';
+        }
     }
 }

@@ -34,14 +34,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.btnPasswordRelated = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(192, 128);
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(176, 128);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(79, 16);
+            this.lblUserName.Size = new System.Drawing.Size(99, 20);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "User Name:";
             // 
@@ -56,7 +58,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(276, 173);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '#';
             this.txtPassword.Size = new System.Drawing.Size(206, 22);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
@@ -64,9 +66,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 174);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(186, 174);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
@@ -94,11 +97,22 @@
             this.lblMessage.Text = "Invalid username or password";
             this.lblMessage.Visible = false;
             // 
+            // btnPasswordRelated
+            // 
+            this.btnPasswordRelated.Location = new System.Drawing.Point(488, 170);
+            this.btnPasswordRelated.Name = "btnPasswordRelated";
+            this.btnPasswordRelated.Size = new System.Drawing.Size(112, 28);
+            this.btnPasswordRelated.TabIndex = 18;
+            this.btnPasswordRelated.Text = "Show/Hide";
+            this.btnPasswordRelated.UseVisualStyleBackColor = true;
+            this.btnPasswordRelated.Click += new System.EventHandler(this.btnPasswordRelated_Click);
+            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPasswordRelated);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -120,5 +134,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Button btnPasswordRelated;
     }
 }

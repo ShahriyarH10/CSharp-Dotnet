@@ -48,6 +48,24 @@ namespace WindowsFormsApp1
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
+            if (btn.Text == ".")
+            {
+                
+                if (!txtResult.Text.Contains("."))
+                {
+                    txtResult.Text += ".";
+                    isNewEntry = false;
+                }
+               
+                else if (isNewEntry)
+                {
+                    txtResult.Text = "0.";
+                    isNewEntry = false;
+                }
+                
+                return;
+            }
+
             if (isNewEntry || txtResult.Text == "0")
             {
                 txtResult.Text = btn.Text;

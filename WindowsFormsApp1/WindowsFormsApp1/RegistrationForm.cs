@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
 
         private void btnPasswordRelated_Click(object sender, EventArgs e)
         {
-            this.txtPassword.PasswordChar = this.txtPassword.PasswordChar.ToString() == "\0" ? '*' : '\0';
+            this.txtPassword.PasswordChar = this.txtPassword.PasswordChar == '\0' ? '*' : '\0';
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
