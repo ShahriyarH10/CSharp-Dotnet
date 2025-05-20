@@ -123,6 +123,7 @@
             this.cbSMS.TabIndex = 0;
             this.cbSMS.Text = "SMS Notification";
             this.cbSMS.UseVisualStyleBackColor = true;
+            this.cbSMS.CheckedChanged += new System.EventHandler(this.cbSMS_CheckedChanged);
             // 
             // cbReports
             // 
@@ -133,6 +134,7 @@
             this.cbReports.TabIndex = 1;
             this.cbReports.Text = "Reports";
             this.cbReports.UseVisualStyleBackColor = true;
+            this.cbReports.CheckedChanged += new System.EventHandler(this.cbReports_CheckedChanged);
             // 
             // cbTransaction
             // 
@@ -143,10 +145,12 @@
             this.cbTransaction.TabIndex = 2;
             this.cbTransaction.Text = "Transaction Reports";
             this.cbTransaction.UseVisualStyleBackColor = true;
+            this.cbTransaction.CheckedChanged += new System.EventHandler(this.cbTransaction_CheckedChanged);
             // 
             // lblSMS
             // 
             this.lblSMS.AutoSize = true;
+            this.lblSMS.ForeColor = System.Drawing.Color.IndianRed;
             this.lblSMS.Location = new System.Drawing.Point(315, 35);
             this.lblSMS.Name = "lblSMS";
             this.lblSMS.Size = new System.Drawing.Size(51, 16);
@@ -156,6 +160,7 @@
             // lblReports
             // 
             this.lblReports.AutoSize = true;
+            this.lblReports.ForeColor = System.Drawing.Color.IndianRed;
             this.lblReports.Location = new System.Drawing.Point(315, 76);
             this.lblReports.Name = "lblReports";
             this.lblReports.Size = new System.Drawing.Size(51, 16);
@@ -165,6 +170,7 @@
             // lblTransaction
             // 
             this.lblTransaction.AutoSize = true;
+            this.lblTransaction.ForeColor = System.Drawing.Color.IndianRed;
             this.lblTransaction.Location = new System.Drawing.Point(315, 113);
             this.lblTransaction.Name = "lblTransaction";
             this.lblTransaction.Size = new System.Drawing.Size(51, 16);

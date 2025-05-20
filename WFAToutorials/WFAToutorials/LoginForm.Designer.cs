@@ -35,6 +35,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserId
@@ -75,7 +76,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(369, 268);
+            this.btnLogin.Location = new System.Drawing.Point(318, 258);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(470, 268);
+            this.btnReset.Location = new System.Drawing.Point(419, 258);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 5;
@@ -93,11 +94,22 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Location = new System.Drawing.Point(521, 258);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(75, 23);
+            this.btnSignUp.TabIndex = 6;
+            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnSignUp;
     }
 }

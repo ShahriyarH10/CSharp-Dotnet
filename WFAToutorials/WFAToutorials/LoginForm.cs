@@ -62,5 +62,12 @@ namespace WFAToutorials
                 ResetMyForm();
             }
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SignUpForm sf = new SignUpForm();
+            sf.Show();
+        }
     }
 }
