@@ -40,9 +40,10 @@
             // dtPicker
             // 
             this.dtPicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtPicker.Location = new System.Drawing.Point(270, 50);
             this.dtPicker.Name = "dtPicker";
-            this.dtPicker.Size = new System.Drawing.Size(212, 20);
+            this.dtPicker.Size = new System.Drawing.Size(305, 26);
             this.dtPicker.TabIndex = 0;
             this.dtPicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
