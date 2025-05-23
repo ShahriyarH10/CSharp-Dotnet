@@ -32,15 +32,15 @@
             this.lblLName = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.lblFName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.gbServices = new System.Windows.Forms.GroupBox();
-            this.cbSMS = new System.Windows.Forms.CheckBox();
-            this.cbReports = new System.Windows.Forms.CheckBox();
-            this.cbTransaction = new System.Windows.Forms.CheckBox();
-            this.lblSMS = new System.Windows.Forms.Label();
-            this.lblReports = new System.Windows.Forms.Label();
             this.lblTransaction = new System.Windows.Forms.Label();
+            this.lblReports = new System.Windows.Forms.Label();
+            this.lblSMS = new System.Windows.Forms.Label();
+            this.cbTransaction = new System.Windows.Forms.CheckBox();
+            this.cbReports = new System.Windows.Forms.CheckBox();
+            this.cbSMS = new System.Windows.Forms.CheckBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.gbServices.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,6 @@
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(457, 20);
             this.txtLName.TabIndex = 7;
-            this.txtLName.UseSystemPasswordChar = true;
             // 
             // lblLName
             // 
@@ -80,13 +79,12 @@
             this.lblFName.TabIndex = 4;
             this.lblFName.Text = "First Name:";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txtEmail.Location = new System.Drawing.Point(271, 137);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(457, 20);
+            this.txtEmail.TabIndex = 9;
             // 
             // lblEmail
             // 
@@ -114,32 +112,41 @@
             this.gbServices.TabStop = false;
             this.gbServices.Text = "Services";
             // 
-            // cbSMS
+            // lblTransaction
             // 
-            this.cbSMS.AutoSize = true;
-            this.cbSMS.Location = new System.Drawing.Point(117, 34);
-            this.cbSMS.Name = "cbSMS";
-            this.cbSMS.Size = new System.Drawing.Size(140, 20);
-            this.cbSMS.TabIndex = 0;
-            this.cbSMS.Text = "SMS Notification";
-            this.cbSMS.UseVisualStyleBackColor = true;
-            this.cbSMS.CheckedChanged += new System.EventHandler(this.cbSMS_CheckedChanged);
+            this.lblTransaction.AutoSize = true;
+            this.lblTransaction.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblTransaction.Location = new System.Drawing.Point(236, 126);
+            this.lblTransaction.Name = "lblTransaction";
+            this.lblTransaction.Size = new System.Drawing.Size(51, 16);
+            this.lblTransaction.TabIndex = 5;
+            this.lblTransaction.Text = "...........";
+            this.lblTransaction.Click += new System.EventHandler(this.lblTransaction_Click);
             // 
-            // cbReports
+            // lblReports
             // 
-            this.cbReports.AutoSize = true;
-            this.cbReports.Location = new System.Drawing.Point(117, 72);
-            this.cbReports.Name = "cbReports";
-            this.cbReports.Size = new System.Drawing.Size(81, 20);
-            this.cbReports.TabIndex = 1;
-            this.cbReports.Text = "Reports";
-            this.cbReports.UseVisualStyleBackColor = true;
-            this.cbReports.CheckedChanged += new System.EventHandler(this.cbReports_CheckedChanged);
+            this.lblReports.AutoSize = true;
+            this.lblReports.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblReports.Location = new System.Drawing.Point(236, 89);
+            this.lblReports.Name = "lblReports";
+            this.lblReports.Size = new System.Drawing.Size(51, 16);
+            this.lblReports.TabIndex = 4;
+            this.lblReports.Text = "...........";
+            // 
+            // lblSMS
+            // 
+            this.lblSMS.AutoSize = true;
+            this.lblSMS.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblSMS.Location = new System.Drawing.Point(236, 48);
+            this.lblSMS.Name = "lblSMS";
+            this.lblSMS.Size = new System.Drawing.Size(51, 16);
+            this.lblSMS.TabIndex = 3;
+            this.lblSMS.Text = "...........";
             // 
             // cbTransaction
             // 
             this.cbTransaction.AutoSize = true;
-            this.cbTransaction.Location = new System.Drawing.Point(117, 109);
+            this.cbTransaction.Location = new System.Drawing.Point(38, 122);
             this.cbTransaction.Name = "cbTransaction";
             this.cbTransaction.Size = new System.Drawing.Size(167, 20);
             this.cbTransaction.TabIndex = 2;
@@ -147,35 +154,27 @@
             this.cbTransaction.UseVisualStyleBackColor = true;
             this.cbTransaction.CheckedChanged += new System.EventHandler(this.cbTransaction_CheckedChanged);
             // 
-            // lblSMS
+            // cbReports
             // 
-            this.lblSMS.AutoSize = true;
-            this.lblSMS.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblSMS.Location = new System.Drawing.Point(315, 35);
-            this.lblSMS.Name = "lblSMS";
-            this.lblSMS.Size = new System.Drawing.Size(51, 16);
-            this.lblSMS.TabIndex = 3;
-            this.lblSMS.Text = "...........";
+            this.cbReports.AutoSize = true;
+            this.cbReports.Location = new System.Drawing.Point(38, 85);
+            this.cbReports.Name = "cbReports";
+            this.cbReports.Size = new System.Drawing.Size(81, 20);
+            this.cbReports.TabIndex = 1;
+            this.cbReports.Text = "Reports";
+            this.cbReports.UseVisualStyleBackColor = true;
+            this.cbReports.CheckedChanged += new System.EventHandler(this.cbReports_CheckedChanged);
             // 
-            // lblReports
+            // cbSMS
             // 
-            this.lblReports.AutoSize = true;
-            this.lblReports.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblReports.Location = new System.Drawing.Point(315, 76);
-            this.lblReports.Name = "lblReports";
-            this.lblReports.Size = new System.Drawing.Size(51, 16);
-            this.lblReports.TabIndex = 4;
-            this.lblReports.Text = "...........";
-            // 
-            // lblTransaction
-            // 
-            this.lblTransaction.AutoSize = true;
-            this.lblTransaction.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblTransaction.Location = new System.Drawing.Point(315, 113);
-            this.lblTransaction.Name = "lblTransaction";
-            this.lblTransaction.Size = new System.Drawing.Size(51, 16);
-            this.lblTransaction.TabIndex = 5;
-            this.lblTransaction.Text = "...........";
+            this.cbSMS.AutoSize = true;
+            this.cbSMS.Location = new System.Drawing.Point(38, 47);
+            this.cbSMS.Name = "cbSMS";
+            this.cbSMS.Size = new System.Drawing.Size(140, 20);
+            this.cbSMS.TabIndex = 0;
+            this.cbSMS.Text = "SMS Notification";
+            this.cbSMS.UseVisualStyleBackColor = true;
+            this.cbSMS.CheckedChanged += new System.EventHandler(this.cbSMS_CheckedChanged);
             // 
             // btnSignUp
             // 
@@ -186,6 +185,7 @@
             this.btnSignUp.TabIndex = 11;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // SignUpForm
             // 
@@ -194,7 +194,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.gbServices);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtLName);
             this.Controls.Add(this.lblLName);
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Label lblLName;
         private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.Label lblFName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.GroupBox gbServices;
         private System.Windows.Forms.CheckBox cbTransaction;

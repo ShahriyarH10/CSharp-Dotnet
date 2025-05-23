@@ -67,9 +67,31 @@ namespace WFAToutorials
             else
             {
                 transactions = false;
-                lblSMS.Text = "No";
+                lblTransaction.Text = "Services Chargers Dosen't Apply for Transcations";
             }
 
+        }
+
+        private void lblTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            fName = txtFName.Text;
+            lName = txtLName.Text;
+            emailAddress = txtEmail.Text;
+            if (txtFName.Text == "" || txtLName.Text == "" || txtEmail.Text == "")
+            {
+                MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Hide();
+                ConformationForm cf = new ConformationForm();
+                cf.Show();
+            }
         }
     }
 }

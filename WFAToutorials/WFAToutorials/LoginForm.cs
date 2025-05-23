@@ -58,9 +58,6 @@ namespace WFAToutorials
             {
                 Login();
             }
-            if (e.KeyChar != (char)Keys.F1) {
-                ResetMyForm();
-            }
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
