@@ -37,5 +37,11 @@ namespace WFAToutorials
             }
 
         }
+
+        private void btnDateTime_Click(object sender, EventArgs e)
+        {
+            DateTimeForm dtF = new DateTimeForm();
+            dtF.Show();
+        }
     }
 }

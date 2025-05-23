@@ -52,6 +52,12 @@
     <Compile Include="ConformationForm.Designer.cs">
       <DependentUpon>ConformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DateTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateTimeForm.Designer.cs">
+      <DependentUpon>DateTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConformationForm.resx">
       <DependentUpon>ConformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimeForm.resx">
+      <DependentUpon>DateTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>

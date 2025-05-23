@@ -49,7 +49,7 @@ namespace WFAToutorials
             else
             {
                 reports = false;
-                
+
             }
 
         }
