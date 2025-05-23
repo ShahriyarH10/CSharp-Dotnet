@@ -88,9 +88,25 @@ namespace WFAToutorials
             }
             else
             {
-                this.Hide();
+                //this.Hide();
                 ConformationForm cf = new ConformationForm();
                 cf.Show();
+            }
+        }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Owner.Hide();
+            }
+        }
+
+        private void SignUpForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
             }
         }
     }

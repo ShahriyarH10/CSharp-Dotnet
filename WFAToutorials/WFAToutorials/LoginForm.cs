@@ -30,9 +30,9 @@ namespace WFAToutorials
 
             if (id == "i25" && pass == "123456")
             {
-                this.Hide();
+                
                 Welcome f1 = new Welcome();
-                f1.Show();
+                f1.Show(this);
             }
             else
             {
@@ -62,9 +62,14 @@ namespace WFAToutorials
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             SignUpForm sf = new SignUpForm();
-            sf.Show();
+            sf.Show(this);
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

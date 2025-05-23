@@ -19,6 +19,12 @@ namespace WFAToutorials
 
         private void ConformationForm_Load(object sender, EventArgs e)
         {
+
+            if (this.Owner != null)
+            {
+                this.Owner.Hide();
+            }
+
             lblYFName.Text = SignUpForm.fName;
             lblYLName.Text = SignUpForm.lName;
             lblYEmail.Text = SignUpForm.emailAddress;
@@ -38,10 +44,12 @@ namespace WFAToutorials
 
         }
 
-        private void btnDateTime_Click(object sender, EventArgs e)
+        private void ConformationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DateTimeForm dtF = new DateTimeForm();
-            dtF.Show();
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
         }
     }
 }

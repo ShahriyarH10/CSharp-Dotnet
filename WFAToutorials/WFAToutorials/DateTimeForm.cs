@@ -35,5 +35,21 @@ namespace WFAToutorials
             lbl5TimeSecond.Text = dtPicker.Value.ToString("dddd, MMMM dd, yyyy hh:mm:ss tt");
 
         }
+
+        private void DateTimeForm_Load(object sender, EventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Owner.Hide();
+            }
+        }
+
+        private void DateTimeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
+        }
     }
 }

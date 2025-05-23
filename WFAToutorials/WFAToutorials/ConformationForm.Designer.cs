@@ -42,7 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnDateTime = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFName
@@ -185,22 +184,11 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Transaction Reports";
             // 
-            // btnDateTime
-            // 
-            this.btnDateTime.Location = new System.Drawing.Point(379, 415);
-            this.btnDateTime.Name = "btnDateTime";
-            this.btnDateTime.Size = new System.Drawing.Size(75, 23);
-            this.btnDateTime.TabIndex = 22;
-            this.btnDateTime.Text = "Date Time";
-            this.btnDateTime.UseVisualStyleBackColor = true;
-            this.btnDateTime.Click += new System.EventHandler(this.btnDateTime_Click);
-            // 
             // ConformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDateTime);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -217,6 +205,7 @@
             this.Controls.Add(this.lblFName);
             this.Name = "ConformationForm";
             this.Text = "ConformationForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConformationForm_FormClosing);
             this.Load += new System.EventHandler(this.ConformationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -239,6 +228,5 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnDateTime;
     }
 }

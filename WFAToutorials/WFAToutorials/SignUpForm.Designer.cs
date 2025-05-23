@@ -202,6 +202,8 @@
             this.Controls.Add(this.lblFName);
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUpForm_FormClosing);
+            this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.gbServices.ResumeLayout(false);
             this.gbServices.PerformLayout();
             this.ResumeLayout(false);

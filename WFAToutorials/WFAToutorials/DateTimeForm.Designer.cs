@@ -121,6 +121,8 @@
             this.Controls.Add(this.dtPicker);
             this.Name = "DateTimeForm";
             this.Text = "DateTimeForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DateTimeForm_FormClosing);
+            this.Load += new System.EventHandler(this.DateTimeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

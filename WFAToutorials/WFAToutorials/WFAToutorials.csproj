@@ -58,6 +58,12 @@
     <Compile Include="DateTimeForm.Designer.cs">
       <DependentUpon>DateTimeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProjectDeveloperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectDeveloperForm.Designer.cs">
+      <DependentUpon>ProjectDeveloperForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DateTimeForm.resx">
       <DependentUpon>DateTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectDeveloperForm.resx">
+      <DependentUpon>ProjectDeveloperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
