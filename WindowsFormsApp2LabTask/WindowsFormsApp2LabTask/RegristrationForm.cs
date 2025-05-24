@@ -47,6 +47,17 @@ namespace WindowsFormsApp2LabTask
             string password = txtPassword.Text.ToString();
             string confirmPassword = txtCPassword.Text.ToString();
 
+
+            if (string.IsNullOrWhiteSpace(txtStudentID.Text) ||
+                     string.IsNullOrWhiteSpace(txtFullName.Text) ||
+                     string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                     string.IsNullOrWhiteSpace(password))
+            {
+
+                MessageBox.Show("Please fill in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (password != confirmPassword)
             {
 
@@ -54,19 +65,10 @@ namespace WindowsFormsApp2LabTask
                 lblWarn.Visible = true;
 
             }
-            else if (string.IsNullOrWhiteSpace(txtStudentID.Text) ||
-                      string.IsNullOrWhiteSpace(txtFullName.Text) ||
-                      string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                      string.IsNullOrWhiteSpace(password))
-            {
-
-                MessageBox.Show("Please fill in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
             else
             {
-
+                txtCPassword.BackColor = Color.White;
+                lblWarn.Visible = false;
                 var result = MessageBox.Show("Are you sure you want to submit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -80,6 +82,9 @@ namespace WindowsFormsApp2LabTask
                                   $"Department: {comboBox1.Text}\n" +
                                   $"Skills: {string.Join(", ", skills)}\n" +
                                   $"Password: {password}";
+
+                    MessageBox.Show(info, "Registration Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                     this.Close();
                     if (this.Owner != null)

@@ -343,6 +343,7 @@
             this.Controls.Add(this.txtStudentID);
             this.Controls.Add(this.lblStudentID);
             this.Name = "RegristrationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegristrationForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegristrationForm_FormClosing);
             this.Load += new System.EventHandler(this.RegristrationForm_Load);
