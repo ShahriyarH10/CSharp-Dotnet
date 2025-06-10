@@ -306,6 +306,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FlightBookingForm";
             this.Text = "FlightBookingForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FlightBookingForm_FormClosing);
+            this.Load += new System.EventHandler(this.FlightBookingForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

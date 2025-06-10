@@ -38,6 +38,27 @@ namespace WFAToutorials
             dtpExpiryDate.MinDate = dt;
         }
 
+        private void FlightBookingForm_Load(object sender, EventArgs e)
+        {
+
+
+            if (this.Owner != null)
+            {
+                this.Owner.Hide();
+            }
+
+        }
+
+        private void FlightBookingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (this.Owner != null)
+            {
+                this.Owner.Show();
+            }
+
+        }
+
         private void rbtnPassport_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnPassport.Checked)

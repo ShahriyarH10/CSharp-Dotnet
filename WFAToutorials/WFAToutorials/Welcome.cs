@@ -74,5 +74,11 @@ namespace WFAToutorials
                 lblPerchase.Text = "You have cancelled the order";
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FlightBookingForm fbF = new FlightBookingForm();
+            fbF.Show(this);
+        }
     }
 }
