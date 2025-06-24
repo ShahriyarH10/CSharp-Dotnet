@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingSummaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingSummaryForm.Designer.cs">
+      <DependentUpon>BookingSummaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BookingSummaryForm.resx">
+      <DependentUpon>BookingSummaryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConformationForm.resx">
       <DependentUpon>ConformationForm.cs</DependentUpon>
     </EmbeddedResource>
