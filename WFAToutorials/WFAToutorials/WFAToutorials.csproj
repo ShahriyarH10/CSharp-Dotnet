@@ -52,6 +52,12 @@
     <Compile Include="BookingSummaryForm.Designer.cs">
       <DependentUpon>BookingSummaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClinicAppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicAppForm.Designer.cs">
+      <DependentUpon>ClinicAppForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BookingSummaryForm.resx">
       <DependentUpon>BookingSummaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicAppForm.resx">
+      <DependentUpon>ClinicAppForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConformationForm.resx">
       <DependentUpon>ConformationForm.cs</DependentUpon>

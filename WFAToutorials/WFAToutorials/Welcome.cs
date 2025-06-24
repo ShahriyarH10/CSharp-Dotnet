@@ -80,5 +80,11 @@ namespace WFAToutorials
             FlightBookingForm fbF = new FlightBookingForm();
             fbF.Show(this);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClinicAppForm caf = new ClinicAppForm();
+            caf.Show(this);
+        }
     }
 }
